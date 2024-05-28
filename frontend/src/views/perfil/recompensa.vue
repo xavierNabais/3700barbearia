@@ -136,7 +136,7 @@ export default {
   methods: {
     async fetchUtilizador() {
       try {
-        const response = await fetch(`api/painel/utilizadores/${this.userId}`);
+        const response = await fetch(`https://3700barbearia-api.vercel.app/painel/utilizadores/${this.userId}`);
         const data = await response.json();
         this.utilizador = data;
         if (this.utilizador.Pontos < 10) {

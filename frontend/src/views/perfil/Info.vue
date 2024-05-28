@@ -214,7 +214,7 @@ return `${this.months[this.currentMonth - 1]} ${this.currentYear}`;
 methods: {
   async deleteMarcacao(id) {
       try {
-        const response = await fetch(`api/painel/marcacoes/${id}`, {
+        const response = await fetch(`https://3700barbearia-api.vercel.app/painel/marcacoes/${id}`, {
           method: 'DELETE',
           headers: {
             'Content-Type': 'application/json',
@@ -245,7 +245,7 @@ methods: {
 
 async fetchMarcacoes() {
 try {
-  const response = await fetch('api/painel/marcacoes');
+  const response = await fetch('https://3700barbearia-api.vercel.app/painel/marcacoes');
   this.marcacoes = await response.json();
 } catch (error) {
   console.error('Erro ao buscar as marcações:', error);
@@ -253,7 +253,7 @@ try {
 },
   async fetchServicos() {
   try {
-    const response = await fetch('api/painel/servicos');
+    const response = await fetch('https://3700barbearia-api.vercel.app/painel/servicos');
     const data = await response.json();
     this.servicos = data;
   } catch (error) {
@@ -276,7 +276,7 @@ filterServicosPorCategoria(categoria) {
 
 async fetchBarbeiros() {
 try {
-  const response = await fetch('api/painel/barbeiros');
+  const response = await fetch('https://3700barbearia-api.vercel.app/painel/barbeiros');
   const data = await response.json();
   this.barbeiros = data;
 } catch (error) {
@@ -395,7 +395,7 @@ async selectDay(day) {
 
   try {
         // Obtém as marcações do servidor para o dia selecionado
-    const response = await fetch(`api/painel/marcacoes?data=${this.currentYear}-${day.month+1}-${day.day}&barbeiro=${this.barbeiro}`);
+    const response = await fetch(`https://3700barbearia-api.vercel.app/painel/marcacoes?data=${this.currentYear}-${day.month+1}-${day.day}&barbeiro=${this.barbeiro}`);
     const data = await response.json();
 
         // Converte as marcações em horários bloqueados
@@ -509,7 +509,7 @@ selectService(service) {
           notas: this.selectedNotas,
         };
         const marcacaoId = this.serviceDefault.Id;
-        const response = await fetch(`api/painel/marcacoes/${marcacaoId}`, {
+        const response = await fetch(`https://3700barbearia-api.vercel.app/painel/marcacoes/${marcacaoId}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',

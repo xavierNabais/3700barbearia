@@ -468,7 +468,7 @@
                       console.error('UserId não encontrado na sessionStorage.');
                       return;
                     }
-                    const url = `api/perfil/editar/1/${userId}`;
+                    const url = `https://3700barbearia-api.vercel.app/perfil/editar/1/${userId}`;
                     const response = await fetch(url, {
                       method: 'PUT',
                       headers: {
@@ -510,7 +510,7 @@
                         Id: userId
                     };
 
-                    const url = `api/perfil/editar/2/${userId}`;
+                    const url = `https://3700barbearia-api.vercel.app/perfil/editar/2/${userId}`;
                     const response = await fetch(url, {
                         method: 'PUT',
                         headers: {
@@ -554,7 +554,7 @@
                         Id: userId 
                     };
 
-                    const url = `api/perfil/editar/3/${userId}`;
+                    const url = `https://3700barbearia-api.vercel.app/perfil/editar/3/${userId}`;
                     const response = await fetch(url, {
                         method: 'PUT',
                         headers: {
@@ -593,7 +593,7 @@
                       console.error('UserId não encontrado na sessionStorage.');
                       return;
                   }
-                  const url = `api/painel/utilizadores/${userId}`;
+                  const url = `https://3700barbearia-api.vercel.app/painel/utilizadores/${userId}`;
                   const response = await fetch(url);
                   const data = await response.json();
 
