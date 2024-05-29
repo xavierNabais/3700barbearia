@@ -17,6 +17,7 @@
             <li><a href="#servicos">Serviços</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contactos">Contactos</a></li>
+            <li v-if="type === 2"><a href="/agenda">Agenda</a></li>
             <li v-if="userId"><a href="/perfil">Minha Conta </a></li>
             <li v-if="!userId"><a href="/login">Entrar na minha conta » </a></li>
             <li v-if="userId"><a @click="logout" href="/">Logout</a></li>
@@ -87,6 +88,7 @@ export default {
     if (token) {
       const decoded = jwtDecode(token);
       this.userId = decoded.userId;
+      this.type = decoded.type;
     }
   }
 }
