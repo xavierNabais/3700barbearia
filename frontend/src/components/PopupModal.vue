@@ -767,6 +767,8 @@ async selectDay(day) {
       return `${hora.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}`;
     });
 
+    console.log(blockedTimes);
+
     // Verifica se a data selecionada é o dia atual
     const isToday = selectedDate.toDateString() === currentDate.toDateString();
 
