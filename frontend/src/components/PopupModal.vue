@@ -760,11 +760,11 @@ async selectDay(day) {
     const response = await fetch(`https://3700barbearia-api.vercel.app/painel/marcacoes?data=${this.currentYear}-${day.month + 1}-${day.day}&barbeiro=${this.barbeiro}`);
     const data = await response.json();
 
-    // Converte as marcações em horários bloqueados
     const blockedTimes = data.map(marcacao => {
-      const hora = new Date(marcacao.Data).getHours();
-      const minutos = new Date(marcacao.Data).getMinutes();
-      return `${hora.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}`;
+    const date = new Date(marcacao.Data);
+    const hora = date.getUTCHours();
+    const minutos = date.getUTCMinutes();
+    return `${hora.toString().padStart(2, '0')}:${minutos.toString().padStart(2, '0')}`;
     });
 
     console.log(blockedTimes);
