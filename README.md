@@ -2,7 +2,7 @@
 
 **[English Version](#english-version)** | **[Versão Portuguesa](#versao-portuguesa)**
 
-![Logo](https://via.placeholder.com/150)
+<img src="https://github.com/xavierNabais/3700barbearia/blob/main/frontend/src/assets/images/logo.png" alt="Logo" width="100"/>
 
 ---
 
